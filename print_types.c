@@ -12,6 +12,9 @@ int _print_string(va_list al)
 	char *str = va_arg(al, char *);
 	int i = 0;
 
+	if (!str)
+		str = "(nil)";
+
 	for (i = 0; str[i]; i++)
 	{
 		_write(str[i]);
