@@ -17,5 +17,6 @@ int _print_char(va_list pa);
 int _print_string(va_list pa);
 int _convert_int(va_list pa);
 int _print_number(int num);
+int _print_perc(char c);
 
 #endif

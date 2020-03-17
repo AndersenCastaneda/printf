@@ -6,7 +6,8 @@ int _print_handler(const char *format, va_list pa)
 	handler f_handler[] = {
 		{'c', _print_char},
 		{'s', _print_string},
-		{'d', _convert_int}
+		{'d', _convert_int},
+		{'%', _print_perc}
 	};
 
 	while (format[i])
