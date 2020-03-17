@@ -1,22 +1,27 @@
-#ifndef PRINTF_H
-#define PRINTF_H
+#ifndef HOLBERTON_H
+#define HOLBERTON_H
 
 #include <stdarg.h>
+#include <stdlib.h>
 
+/**
+ * struct prit_handler - format/function handler
+ * @c: char format
+ * @f: function
+ * Description: longer description
+ */
 typedef struct print_handler
 {
 	char c;
 	int (*f)(va_list);
-} handler;
+} handler_t;
 
-int _write_char(char c);
-
+int _write(char c);
 int _printf(const char *format, ...);
-int _print_handler(const char *format, va_list pa);
-int _print_char(va_list pa);
-int _print_string(va_list pa);
-int _convert_int(va_list pa);
+int _print_char(va_list al);
+int _print_string(va_list al);
+int handler_int(va_list al);
 int _print_number(int num);
-int _print_perc(char c);
+int _print_perc(va_list al);
 
 #endif
