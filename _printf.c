@@ -25,7 +25,7 @@ int (*format_handler(const char c))(va_list)
 			return (handler[i].f);
 	}
 
-	return (NULL);
+	return ('\0');
 }
 
 /**
@@ -54,16 +54,16 @@ int _printf(const char *format, ...)
 				return (-1);
 
 			f = format_handler(format[i]);
-			if (!f)
-			{
-				len += _write('%');
-				if (format[i - 1] == ' ')
-					len += _write(' ');
-				len += _write(format[i]);
-			}
-			else
+			if (f)
 			{
 				len += f(al);
+			}
+			else
+			{	
+				len += _write('%');
+				if (!f && format[i - 1] == ' ')
+					len += _write(' ');
+				len += _write(format[i]);
 			}
 		}
 		else

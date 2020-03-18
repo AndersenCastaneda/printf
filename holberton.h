@@ -1,9 +1,7 @@
 #ifndef HOLBERTON_H
 #define HOLBERTON_H
 
-#include <stdlib.h>
 #include <stdarg.h>
-
 /**
  * struct print_handler - format/function handler
  * @c: char format
