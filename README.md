@@ -45,7 +45,6 @@ Supported convention.
 | ------- | --- |
 | Char | %c: Print a char|
 | String | %s: Print a string |
-|
 | Int | %d: Print an integer |
 | Int | %i: Print an integer |
 | Unsigned | %u: Print an unsigned integer |
