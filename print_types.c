@@ -66,20 +66,9 @@ int _print_number(int num)
  */
 int handler_int(va_list al)
 {
-        int num = va_arg(al, int);
-        int len = 0;
+	int num = va_arg(al, int);
+	int len = 0;
 
-        len = _print_number(num);
-        return (len);
-}
-
-/**
- * _print_perc - print a %
- * @al: void argument list (va_list)
- * return: char count
- */
-int _print_perc(va_list al)
-{
-	(void)al;
-	return (_write('%'));
+	len = _print_number(num);
+	return (len);
 }

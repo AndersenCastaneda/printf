@@ -16,7 +16,6 @@ int (*format_handler(const char c))(va_list)
 		{'d', handler_int},
 		{'i', handler_int},
 		{'u', handler_int},
-		{'%', _print_perc},
 		{0, 0}
 	};
 
@@ -51,21 +50,20 @@ int _printf(const char *format, ...)
 			i++;
 			while (format[i] && format[i] == ' ')
 				i++;
-			/*if i come to the end of the string*/
 			if (!format[i])
 				return (-1);
 
 			f = format_handler(format[i]);
-			if (f)
+			if (!f)
 			{
-				len += f(al);
+				len += _write('%');
+				if (format[i - 1] == ' ')
+					len += _write(' ');
+				len += _write(format[i]);
 			}
 			else
 			{
-				len += _print_perc(al);
-				if (!f && format[i - 1] == ' ')
-					len += _write(' ');
-				len += _write(format[i]);
+				len += f(al);
 			}
 		}
 		else
@@ -73,6 +71,7 @@ int _printf(const char *format, ...)
 			len += _write(format[i]);
 		}
 	}
+	_write(-1);
 	va_end(al);
 	return (len);
 }
