@@ -13,7 +13,8 @@ int main(void)
 	int len2;
 	unsigned int ui;
 	void *addr;
-	_printf("%    s\n", "Holi");
+	_printf("%i\n");
+	printf("%i\n");
 	printf("%    s\n", "Holi");
 	_printf("%");
 	printf("%");

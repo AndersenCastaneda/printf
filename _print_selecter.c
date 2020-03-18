@@ -13,10 +13,10 @@ int (*print_selecter(const char *s))(va_list)
 	printSelecter printTypes[] = {
 		{"c", _print_char},
 		{"s", _print_string},
-		{"d", print_number},
-		{"i", print_number},
-		{"b", print_binary},
-		{"u", print_uint},
+		{"d", _print_number},
+		{"i", _print_number},
+		{"b", _print_binary},
+		{"u", _print_uint},
 		{NULL, NULL}};
 
 	/*Loop trough the array to find a coincidence*/

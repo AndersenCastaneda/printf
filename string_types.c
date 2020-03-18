@@ -50,15 +50,15 @@ int _print_char(va_list la)
 int _print_string(va_list la)
 {
 	int i;
-	char *s;
+	char *str;
 
-	s = va_arg(la, char *);
+	str = va_arg(la, char *);
 
-	if (s == NULL)
-		s = "(null)";
-	for (i = 0; s[i]; i++)
+	if (str == NULL)
+		str = "(null)";
+	for (i = 0; str[i]; i++)
 	{
-		_putchar(s[i]);
+		_putchar(str[i]);
 	}
 	return (i);
 }

@@ -26,9 +26,9 @@ int _putchar(char c);
 int _print_char(va_list);
 int _print_string(va_list la);
 
-int print_number(va_list la);
-int print_number(va_list la);
-int print_uint(va_list la);
-int print_binary(va_list la);
+int _print_number(va_list la);
+int _print_number(va_list la);
+int _print_uint(va_list la);
+int _print_binary(va_list la);
 
 #endif
