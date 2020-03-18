@@ -2,23 +2,33 @@
 #define HOLBERTON_H
 
 #include <stdarg.h>
+#include <unistd.h>
+#include <stdlib.h>
+
 /**
- * struct print_handler - format/function handler
+ * struct printSelecter - format/function handler
  * @c: char format
  * @f: function
- * Description: longer description
+ * Description: Longer description
  */
-typedef struct print_handler
+typedef struct printSelecter
 {
-	char c;
+	char *c;
 	int (*f)(va_list);
-} handler_t;
+} printSelecter;
 
-int _write(char c);
 int _printf(const char *format, ...);
-int _print_char(va_list al);
-int _print_string(va_list al);
-int handler_int(va_list al);
-int _print_number(int num);
+int (*print_selecter(const char *s))(va_list);
+
+int _charcmp(char c);
+int _putchar(char c);
+
+int _print_char(va_list);
+int _print_string(va_list la);
+
+int print_number(va_list la);
+int print_number(va_list la);
+int print_uint(va_list la);
+int print_binary(va_list la);
 
 #endif
