@@ -1,0 +1,27 @@
+.TH "man" 2 "17 march 2019" 0.32 "_printf"
+.SH NAME
+_printf -- formatted output conversion.
+.SH SYNOPSIS
+_printf format [arguments, ...]
+.SH DESCRIPTION
+This is a custom printf fully functional that can print the arguments in any format in a
+string.
+It recieve the any format argument as a string to the standar output with is respective
+length.
+.SH RETURN VALUE
+_printf return the number of bytes, and -1 if it fails.
+.SH NOTES
+This is a custom printf proyect to Holberton School using last proyects to make this possible.
+.SH BUGS
+This custom printf doesn't do all the function of the standart printf.
+.SH EXAMPLE
+#include 'holberton.h'
+int main(void)
+{
+	int l;
+	l = _printf('HolbertonSchool');
+	_printf('HolbertonSchool %d ', l);
+	return (0);
+}
+.SH AUTHOR
+Andersen Castañeda & Daniel Chica
